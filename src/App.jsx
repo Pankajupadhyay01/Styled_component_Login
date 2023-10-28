@@ -4,7 +4,7 @@ const Section = styled.div`
     margin: 0;
     padding: 0;
     height: 100vh; 
-    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    background-image:linear-gradient(to left bottom, #001738, #121b4b, #2d1c5a, #4b1766, #6a036c);
     scroll-snap-align: center; 
     display: flex;
     justify-content: center;
@@ -12,9 +12,10 @@ const Section = styled.div`
     margin: auto;
   `
 const Main = styled.div`  
-  width: 50%; 
+  width: 60%; 
+  height: 60vh;
   padding: 20px;
-  background-color: aliceblue;
+  background-color: #f8f8f863; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,6 +31,7 @@ const Left = styled.div`
     margin: auto;
     flex: 1;
     position: relative;
+    border-right: 2px solid white;
   `
 
 const Image = styled.img` 
@@ -50,9 +52,7 @@ const Right = styled.div`
 
 `
 
-export const StyledForm = styled.form`
-  background-color: #f4f4f4;
-  padding: 20px;
+export const StyledForm = styled.form`  
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -60,28 +60,33 @@ export const StyledForm = styled.form`
   flex-direction: column;
   gap: 12px;
 `
- 
+
 
 export const StyledInput = styled.input`
-  width: 100%;
+  width: 280px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  outline: black;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
 `
 
 export const StyledButton = styled.button`
-  background-color: #ba7ec3;
+  background: linear-gradient(to left bottom, #001738, #121b4b, #2d1c5a, #4b1766, #6a036c);
   color: white;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 10px; 
+  width: 100px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer; 
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 18px;
 `
- 
+
 const App = () => {
   return (
     <Section>
@@ -90,10 +95,10 @@ const App = () => {
           <Image src="/assets/login.png" />
         </Left>
         <Right>
-          <StyledForm > 
-            <StyledInput type="text" /> 
-            <StyledInput type="password" />
-          
+          <StyledForm >
+            <StyledInput type="text" placeholder='Enter Your User Name' />
+            <StyledInput type="text" placeholder='Enter Your Password ' />
+
             <StyledButton type="submit">Login</StyledButton>
           </StyledForm>
         </Right>
